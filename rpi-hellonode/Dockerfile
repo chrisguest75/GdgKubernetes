@@ -1,5 +1,5 @@
-#FROM hypriot/rpi-node
-FROM node
+FROM hypriot/rpi-node
+#FROM node
 MAINTAINER Chris Guest
 
 RUN npm install
