@@ -1,15 +1,19 @@
+#!/usr/bin/env python
+
+import os
 import random
 from influxdb import InfluxDBClient
 from datetime import datetime
 
 if __name__ == '__main__':
-    dbName = "myMeasures"
-    measurementName = "myMeasurement"
-    containerName = "container"
-    dbUrl = "192.168.0.36"
-    dbPort = "8086"
-    dbUser = "admin"
-    dbPass = "admin"
+
+    dbName = os.getenv('DBNAME', "myMeasures")
+    measurementName = os.getenv('MEASURENAME', "myMeasurement")
+    containerName = os.getenv('CONTAINERNAME', "container")
+    dbUrl = os.getenv('DBURL', "192.168.0.36")
+    dbPort = os.getenv('DBPORT', "8086")
+    dbUser = os.getenv('DBUSER', "admin")
+    dbPass = os.getenv('DBPASS', "admin")
 
     influxclient = InfluxDBClient(dbUrl, dbPort, dbUser, dbPass, dbName)
 
