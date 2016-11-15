@@ -7,9 +7,11 @@ RUN apt-get update
 
 RUN mkdir -p /work/src/github.com/hello
 
+ENV LOCALGOVERSION=1.7.3
+ENV BINARY=go$LOCALGOVERSION.linux-armv6l.tar.gz
 # Should just copy the local binary across
-RUN wget https://storage.googleapis.com/golang/go1.7.3.linux-armv6l.tar.gz
-RUN sudo tar -C /usr/local -xzf go1.7.3.linux-armv6l.tar.gz
+RUN wget https://storage.googleapis.com/golang/$BINARY
+RUN sudo tar -C /usr/local -xzf $BINARY
 ENV PATH=$PATH:/usr/local/go/bin
 ENV GOPATH=$HOME/work
 
