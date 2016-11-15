@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import os
+import time
 import random
 from influxdb import InfluxDBClient
 from datetime import datetime
@@ -50,3 +51,5 @@ if __name__ == '__main__':
         print(str(json_body))
         json_batchbody.append(json_body)
         influxclient.write_points(json_batchbody)
+
+        #time.sleep(1) # delays for 5 seconds

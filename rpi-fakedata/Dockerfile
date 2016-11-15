@@ -1,5 +1,5 @@
-FROM python:2.7
-#FROM hypriot/rpi-python:2.7
+#FROM python:2.7
+FROM hypriot/rpi-python:2.7
 MAINTAINER Chris Guest <chris.guest@magentys.io>
 
 RUN apt-get update
