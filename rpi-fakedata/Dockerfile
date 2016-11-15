@@ -12,6 +12,7 @@ RUN  apt-get clean && \
 
 RUN mkdir /workbench
 
+COPY run.sh /workbench
 COPY FakeData/main.py /workbench
 COPY FakeData/requirements.txt /workbench
 
@@ -29,5 +30,4 @@ ENV DBPASS admin
 
 WORKDIR /workbench
 #CMD 'bash'
-RUN . /workbench/venv/bin/activate
-CMD ["python", "main.py"]
+CMD /workbench/run.sh
