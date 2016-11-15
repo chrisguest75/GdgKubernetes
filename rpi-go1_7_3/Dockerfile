@@ -1,5 +1,6 @@
 # This needs to be changed 
-FROM resin/rpi-raspbian:wheezy
+FROM hypriot/rpi-node
+#FROM resin/rpi-raspbian:wheezy
 MAINTAINER Chris Guest <chris.guest@magentys.io>
 
 RUN apt-get update
