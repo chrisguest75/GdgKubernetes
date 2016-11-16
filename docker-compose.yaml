@@ -33,7 +33,7 @@ services:
             - DBNAME=myMeasures
             - MEASURENAME=myMeasurement
             - CONTAINERNAME=container
-            - DBURL=localhost
+            - DBURL=influxdb
             - DBPORT=8086
             - DBUSER=admin
             - DBPASS=admin     
@@ -41,5 +41,5 @@ services:
             - backbone
 
 networks:
-    tipback:
+    backbone:
         driver: bridge

@@ -35,7 +35,7 @@ if __name__ == '__main__':
 
     while True:
         json_batchbody = []
-        timeepoch = int(datetime.utcnow().strftime('%s')) * 1000
+        timeepoch = int(datetime.utcnow().strftime('%s')) * 1000000000
 
         json_body = {
             "measurement": measurementName,
