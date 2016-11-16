@@ -32,7 +32,7 @@ services:
         environment:
             - DBNAME=myMeasures
             - MEASURENAME=myMeasurement
-            - CONTAINERNAME=container
+            - CONTAINERNAME=fakedata
             - DBURL=influxdb
             - DBPORT=8086
             - DBUSER=admin
