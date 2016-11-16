@@ -1,0 +1,45 @@
+version: "2"
+services:
+    # grafana - need to make it work from https
+    grafana:
+        container_name: grafana
+        hostname: grafana
+        image: fg2it/grafana-armhf:v3.1.1
+        #image: grafana/grafana:3.1.1
+        #image: grafana/grafana:latest
+        ports:
+            - "30000:3000"
+        networks:  
+            - backbone
+
+    # influxdb - how do I change the data and log directories?        
+    influxdb:
+        container_name: influxdb
+        hostname: influxdb
+        image: fgabriel/rpi-influxdb
+        ports:
+            - "8083:8083"
+            - "8086:8086"
+        networks:  
+            - backbone
+        #volumes:
+        #    - ./InfluxDB/data:/var/lib/influxdb
+
+    fakedata:
+        container_name: fakedata
+        hostname: fakedata
+        image: chrisguest/rpi-fakedata
+        environment:
+            - DBNAME=myMeasures
+            - MEASURENAME=myMeasurement
+            - CONTAINERNAME=container
+            - DBURL=localhost
+            - DBPORT=8086
+            - DBUSER=admin
+            - DBPASS=admin     
+        networks:  
+            - backbone
+
+networks:
+    tipback:
+        driver: bridge
