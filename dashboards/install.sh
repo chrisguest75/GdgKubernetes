@@ -1,6 +1,6 @@
 
 MACHINE=localhost
-MACHINE=192.168.0.21
+MACHINE=$(hostname -I | cut -d' ' -f1)
 NAME=grafana
 BASEURL=http://admin:admin@$MACHINE:30000
 BASEAPI=${BASEURL}/api
