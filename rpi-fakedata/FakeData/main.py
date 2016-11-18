@@ -16,6 +16,7 @@ if __name__ == '__main__':
     dbUser = os.getenv('DBUSER', "admin")
     dbPass = os.getenv('DBPASS', "admin")
 
+    print(dbUrl + ":" + dbPort)	
     influxclient = InfluxDBClient(dbUrl, dbPort, dbUser, dbPass, dbName)
 
     if dbName is None:

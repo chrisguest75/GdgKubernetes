@@ -30,7 +30,7 @@ services:
     fakedata:
         container_name: fakedata
         hostname: fakedata
-        image: chrisguest/rpi-fakedata
+        image: chrisguest/rpi-fakedata:1.1
         environment:
             - DBNAME=myMeasures
             - MEASURENAME=myMeasurement
