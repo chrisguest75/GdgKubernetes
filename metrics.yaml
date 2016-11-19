@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: metrics
+  labels:
+    app: web
+spec:
+  containers:
+    - name: grafana
+      image: chrisguest/grafana-armhf:v3.1.1
+      ports:
+        - containerPort: 3000
+    - name: influx
+      image: chrisguest/rpi-influxdb
+      ports:
+        - containerPort: 8086
+        - containerPort: 8083
+    - name: fakedata
+      image: chrisguest/rpi-fakedata:1.1
+        
+

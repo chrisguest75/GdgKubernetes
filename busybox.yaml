@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+  labels:
+    app: web
+spec:
+  containers:
+    - name: busybox
+      image: hypriot/rpi-busybox-httpd
+      ports:
+        - containerPort: 80
+
+
